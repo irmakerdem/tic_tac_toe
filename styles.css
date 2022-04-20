@@ -15,7 +15,7 @@ h2 {
 }
 
 p {
- margin: 0;
+  margin: 0;
 }
 
 .main-page {
@@ -45,4 +45,20 @@ p {
 
 .middle-section {
   background-color: #FFA1A1;
+}
+
+.game-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  color: #F9FFA4;
+  border: solid black;
+  height: 60%;
+  width: 80%;
+  margin: 15% auto auto;
+}
+
+.human-side, .computer-side {
+  margin-top: 10%;
 }
