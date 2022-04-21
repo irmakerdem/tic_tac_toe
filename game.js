@@ -15,6 +15,7 @@ class Game {
       ["a3", "b2", "c1"]
     ];
     this.winner = null;
+    this.win = false;
     this.startingPlayer = 1;
     this.currentPlayer = 1;
   }
@@ -30,6 +31,8 @@ class Game {
           }
           if (passedCheck === 3) {
             this.winner = this.players[h];
+            this.players[h].increaseWins();
+            this.win = true;
             // console.log("somebody won!");
             return this.winner;
           }
@@ -37,7 +40,14 @@ class Game {
       }
     }
   }
+  clearGame() {
+    this.player1.choices = "";
+    this.player2.choices = "";
+    this.win = false;
+  }
 }
+
+
 
 
 //////////CONSOLE TEST//////////
