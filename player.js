@@ -3,14 +3,12 @@ class Player {
   constructor(id, token) {
     this.id = id;
     this.token = token;
-    // this.id = 1 || 2;
     // this.token = "😃" || "🤖";
     this.score = 0;
     this.choices = [];
   }
   takeTurn(choiceId) {
     this.choices.push(choiceId);
-    // console.log(this.choices);
   }
   increaseWins() {
     this.score++;

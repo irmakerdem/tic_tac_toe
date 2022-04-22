@@ -41,8 +41,8 @@ class Game {
     }
   }
   clearGame() {
-    this.player1.choices = "";
-    this.player2.choices = "";
+    this.player1.choices = [];
+    this.player2.choices = [];
     this.win = false;
   }
 }
