@@ -1,7 +1,7 @@
 class Game {
   constructor() {
     this.player1 = new Player(1, "😃");
-    this.player2 = new Player(2, "🤖");
+    this.player2 = new Player(2, "😭");
     this.gridPositions = [null, null, null, null, null, null, null, null, null];
     this.winner = null;
     this.gameCompleted = false;
@@ -11,14 +11,6 @@ class Game {
     //             2, null, null,
     //             2, 2, null]
   }
-  // currentGame.player2.choosePosition(4);
-  // currentGame.player2.choosePosition(3);
-  // currentGame.player2.choosePosition(5);
-  // currentGame.player1.choosePosition(0);
-  // currentGame.player1.choosePosition(7);
-  // currentGame.player1.choosePosition(8);
-  // currentGame.checkPlayer1Win();
-  // currentGame.checkPlayer2Win();
   choosePosition(index) {
     if (this.turn === this.player1 && !this.gridPositions[index]) {
       this.gridPositions[index] = 1;
@@ -64,6 +56,16 @@ class Game {
     }
   }
 }
+
+// currentGame.player2.choosePosition(4);
+// currentGame.player2.choosePosition(3);
+// currentGame.player2.choosePosition(5);
+// currentGame.player1.choosePosition(0);
+// currentGame.player1.choosePosition(7);
+// currentGame.player1.choosePosition(8);
+// currentGame.checkPlayer1Win();
+// currentGame.checkPlayer2Win();
+
 
 //   determineWin(winner) {
 //     for (var i = 0; this.gridPositions.length; i++)
