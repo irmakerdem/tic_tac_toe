@@ -1,0 +1,1 @@
+var currentGame = new Game();
