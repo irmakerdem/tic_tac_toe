@@ -69,7 +69,7 @@ class Game {
     this.winner = null;
     console.log("checked for draw");
     console.log(this.winner);
-    return "It's a tie! 👔"
+    return "It's a tie! 👔";
   }
   playGame() {
     this.checkPlayer1Win();

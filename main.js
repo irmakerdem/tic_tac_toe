@@ -4,7 +4,7 @@ var parentGrid = document.querySelector(".game-grid");
 
 
 //EVENT LISTENERS
-parentGrid.addEventListener('click', placeToken)
+parentGrid.addEventListener('click', placeToken);
 
 //DATA FUNCTIONS
 function placeToken() {
