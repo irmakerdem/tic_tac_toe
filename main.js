@@ -22,6 +22,7 @@ function placeToken() {
     event.target.innerText = currentGame.player2.token;
   }
   currentGame.toggleTurn();
+  displayScore();
 }
 
 function displayTurn() {
@@ -40,7 +41,6 @@ function displayScore() {
 
 //RESULTS
 // "😃 won!" or "It is a tie! 👔"
-// show scores
 // show updated scores
 
 
