@@ -6,7 +6,6 @@
 // A way to reset the Game’s board to begin a new game
 
 
-
 // this.totalPlays = 0;
 // var board = [0, 1, 2,
 //             3, 4, 5,
@@ -27,69 +26,8 @@
 //   ["2", "4", "6"]
 // ];
 
-//   checkWinner() {
-//     if ((this.gridPositions[0] === 1 && this.gridPositions[1] === 1 && this.gridPositions[2] === 1) ||
-//       (this.gridPositions[3] === 1 && this.gridPositions[4] === 1 && this.gridPositions[5] === 1) ||
-//       (this.gridPositions[6] === 1 && this.gridPositions[7] === 1 && this.gridPositions[8] === 1) ||
-//       (this.gridPositions[0] === 1 && this.gridPositions[3] === 1 && this.gridPositions[6] === 1) ||
-//       (this.gridPositions[1] === 1 && this.gridPositions[4] === 1 && this.gridPositions[7] === 1) ||
-//       (this.gridPositions[2] === 1 && this.gridPositions[5] === 1 && this.gridPositions[8] === 1) ||
-//       (this.gridPositions[0] === 1 && this.gridPositions[4] === 1 && this.gridPositions[8] === 1) ||
-//       (this.gridPositions[2] === 1 && this.gridPositions[4] === 1 && this.gridPositions[6] === 1)) {
-//         this.gameCompleted = true;
-//         this.winner = this.player1;
-//         console.log("player 1 conditional", this.winner);
-//         this.player1.increaseWins();
-//     } else if ((this.gridPositions[0] === 2 && this.gridPositions[1] === 2 && this.gridPositions[2] === 2) ||
-//         (this.gridPositions[3] === 2 && this.gridPositions[4] === 2 && this.gridPositions[5] === 2) ||
-//         (this.gridPositions[6] === 2 && this.gridPositions[7] === 2 && this.gridPositions[8] === 2) ||
-//         (this.gridPositions[0] === 2 && this.gridPositions[3] === 2 && this.gridPositions[6] === 2) ||
-//         (this.gridPositions[1] === 2 && this.gridPositions[4] === 2 && this.gridPositions[7] === 2) ||
-//         (this.gridPositions[2] === 2 && this.gridPositions[5] === 2 && this.gridPositions[8] === 2) ||
-//         (this.gridPositions[0] === 2 && this.gridPositions[4] === 2 && this.gridPositions[8] === 2) ||
-//         (this.gridPositions[2] === 2 && this.gridPositions[4] === 2 && this.gridPositions[6] === 2)) {
-//           this.gameCompleted = true;
-//           this.winner = this.player2;
-//           console.log("player 2 conditional", this.winner);
-//           this.player2.increaseWins();
-//     } else {
-//       console.log("check ze draw!!");
-//       this.checkDraw();
-//     }
-//   }
-// }
 
-  // checkPlayer2Win() {
-  //   if ((this.gridPositions[0] === 2 && this.gridPositions[1] === 2 && this.gridPositions[2] === 2) ||
-  //     (this.gridPositions[3] === 2 && this.gridPositions[4] === 2 && this.gridPositions[5] === 2) ||
-  //     (this.gridPositions[6] === 2 && this.gridPositions[7] === 2 && this.gridPositions[8] === 2) ||
-  //     (this.gridPositions[0] === 1 && this.gridPositions[3] === 2 && this.gridPositions[6] === 2) ||
-  //     (this.gridPositions[1] === 2 && this.gridPositions[4] === 2 && this.gridPositions[7] === 2) ||
-  //     (this.gridPositions[2] === 2 && this.gridPositions[5] === 2 && this.gridPositions[8] === 2) ||
-  //     (this.gridPositions[0] === 2 && this.gridPositions[4] === 2 && this.gridPositions[8] === 2) ||
-  //     (this.gridPositions[2] === 2 && this.gridPositions[4] === 2 && this.gridPositions[6] === 2)) {
-  //       this.gameCompleted = true;
-  //       this.winner = this.player2;
-  //       this.player2.increaseWins();
-  //   }
-  // }
-
-// currentGame.player2.choosePosition(4);
-// currentGame.player2.choosePosition(3);
-// currentGame.player2.choosePosition(5);
-// currentGame.player1.choosePosition(0);
-// currentGame.player1.choosePosition(7);
-// currentGame.player1.choosePosition(8);
-// currentGame.checkPlayer1Win();
-// currentGame.checkPlayer2Win();
-
-
-//   determineWin(winner) {
-//     for (var i = 0; this.gridPositions.length; i++)
-//       if (this.gridPositions[i] === 1) {
-//         this.player1.increaseWins()
-//       }
-//   }
+////VERSION 2222222222
 //   checkWinner() {
 //     //need to fix all if statements to have two &&?????
 //     if (this.gridPositions[0] === this.gridPositions[1] && this.gridPositions[1] === this.gridPositions[2] && this.gridPositions[0]) {
@@ -120,66 +58,9 @@
 //     }
 //   }
 // }
-    // this.winningPositions = [
-    //   ["0", "1", "2"],
-    //   ["3", "4", "5"],
-    //   ["6", "7", "8"],
-    //   ["0", "3", "6"],
-    //   ["1", "4", "7"],
-    //   ["2", "5", "8"],
-    //   ["0", "4", "8"],
-    //   ["2", "4", "6"]
-    // ];
-
-  // determineToken() {
-  //   if (this.currentlyPlayer1) {
-  //     return this.player1.token;
-  //   } else {
-  //     return this.player2.token;
-  //   }
-  // }
-  // updateGrid(token) {
-  //   token = this.gridPositions[event.target.id];
-  // }
-  // changePlayer() {
-  //   this.currentlyPlayer1 = false;
-  //   this.turnMessage = `It is ${determineToken()}'s turn!`
-  // }
-  // checkWin() {
-  //   for (var i = 0; i < this.winningPositions.length; i++) {
-  //     if (this.gridPositions[this.winningPositions[i][0]] === this.determineToken && ).......
-  //   }
-  // }
-
-
-
-// this.getIcon();
-// this.player1 || this.player2
-// this.player1.increaseWins();
-// this.player2.increaseWins();
-
-
-// var board = ["😃", "😃", "😃",
-//             "😃", "🤖", null,
-//             "😃", "🤖", "😃"]
-// var board = [0, 1, 2
-//             3, 4, 5,
-//             6, 7, 8];
-// condition:    [0, 1, 2] || [3, 4, 5]         || [6, 7, 8]      || [0, 3, 6]         || [1, 4, 7]      || [2, 5, 8]   || [0, 4, 8] || [2, 4, 6]
-// currentBoard: [x, x, x]    [null, o, null]   [ null, o, null]    [1, null, null]    [1, 2, 2]         [1, 0, 0]       [1, 2, 0]      [1, 2, 0]
-//               [1, 1, 1]     [2, 2, 2]
-
-  // getIcon(icon) {
-  //   if () {
-  //     "😃"
-  //   } else {
-  //     "🤖"
-  //   }
-  // }
 
 
   //////////CONSOLE TEST//////////
-
   // currentGame.player2.takeTurn("4");
   // currentGame.player2.takeTurn("3");
   // currentGame.player2.takeTurn("5");
@@ -187,8 +68,6 @@
   // currentGame.player1.takeTurn("7");
   // currentGame.player1.takeTurn("8");
   // currentGame.checkWinner();
-
-
 
 
 //use .every()?
@@ -204,29 +83,7 @@
 // }
 // }
 
-//rewrite last if statement as a method:
-// checkIfWinningCombo() {
-//   for (var h = 0; h < this.players.length; h++) {
-//     if (pass === 3) {
-//       this.winner = this.players[h];
-//       this.players.increaseWins();
-//       this.win = true;
-//       return this.winner;
-//     }
-//   }
-// }
-
-// this.winningPositions = [
-//   ["0", "1", "2"],
-//   ["3", "4", "5"],
-//   ["6", "7", "8"],
-//   ["0", "3", "6"],
-//   ["1", "4", "7"],
-//   ["2", "5", "8"],
-//   ["0", "4", "8"],
-//   ["2", "4", "6"]
-// ];
-
+////VERSION 11111111111
 // checkWinner() {
 //   var passedCheck = 0;
 //   for (var h = 0; h < this.players.length; h++) {
@@ -249,86 +106,8 @@
 //   }
 // }
 
-  // checkWinner() {
-  //   var passedCheck = 0;
-  //   for (var h = 0; h < this.players.length; h++) {
-  //     for (var i = 0; i < this.winningPositions.length; i++) {
-  //       passedCheck = 0;
-  //       for (var j = 0; j < this.winningPositions[i].length; j++) {
-  //         if (this.players[h].choices.includes(this.winningPositions[i][j])) {
-  //           // console.log("passed first if", this.players[h]);
-  //           passedCheck++;
-  //         }
-  //         if (passedCheck === 3) {
-  //           this.winner = this.players[h];
-  //           this.players[h].increaseWins();
-  //           this.gameCompleted = true;
-  //           // console.log("somebody won!");
-  //           return this.winner;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-//   clearGame() {
-//     this.player1.choices = [];
-//     this.player2.choices = [];
-//     this.gameCompleted = false;
-//   }
-// }
-
-
-
-
-
-
-  // checkWinner(player) {
-  //   console.log(player);
-  //   for (var i = 0; i < this.winningPositions.length; i++) {
-  //     for (var j = 0; j < this.winningPositions[i].length; j++) {
-  //       if (player.choices.includes(this.winningPositions[i][j])) {
-  //           this.winner = player;
-  //           return this.winner;
-  //       }
-  //     }
-  //   }
-  // }
-
-
-
-
-
 
 //check both players' arrays.length === 9 then its a draw
-
-
-
-  // checkForDraw() {
-	// 	if (!this.positionsOnGrid.length) {
-  //     return "It's a draw!"
-  // }
-
-  // changeStartingPlayer() {
-  //   if (this.startingPlayer === 1) {
-  //     this.startingPlayer = 2;
-  //     this.currentPlayer = 2;
-  //   } else {
-  //     this.startingPlayer = 1;
-  //     this.currentPlayer = 1;
-  //   }
-  // }
-
-  // choosePosition(player, position) {
-  //   for (var i = 0; i < this.positionsOnGrid.length; i++) {
-  //     if (position === this.positionsOnGrid[i]) {
-  //       this.positionsOnGrid.splice(i, 1);
-  //       player.choices.push(position);
-  //     }
-  //   }
-  // }
-
-
-
 
 
 

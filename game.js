@@ -71,7 +71,7 @@ class Game {
     console.log(this.winner);
     return "It's a tie! 👔";
   }
-  playGame() {
+  checkGameResult() {
     this.checkPlayer1Win();
     this.checkPlayer2Win();
     console.log("ran the 2 long functions");
