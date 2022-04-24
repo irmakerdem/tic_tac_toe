@@ -8,21 +8,19 @@ var player1Score = document.querySelector(".player1-score");
 var player2Score = document.querySelector(".player2-score");
 
 //EVENT LISTENERS
-parentGrid.addEventListener('click', placeToken);
+parentGrid.addEventListener('click', playGame);
 
 //FUNCTIONS
 function placeToken() {
-  displayTurn();
     // console.log(event.target.id);
-  if (currentGame.turn === currentGame.player1) {
+  if (!event.target.innerText && currentGame.turn === currentGame.player1) {
     // console.log(event.target.id);
     event.target.innerText = currentGame.player1.token;
-  } else {
+  } else if (!event.target.innerText && currentGame.turn === currentGame.player2) {
     // console.log(event.target.id);
     event.target.innerText = currentGame.player2.token;
   }
   currentGame.toggleTurn();
-  displayScore();
 }
 
 function displayTurn() {
@@ -38,10 +36,24 @@ function displayScore() {
   player2Score.innerText = `SCORE: ${currentGame.player2.score}`
 };
 
+// function displayWinnerText() {
+//  if (currentGame.winner === currentGame.player1) {
+//    turnNotification.innerText = `😃 won!!! 😃`
+//  } else if (currentGame.winner === currentGame.player2) {
+//    turnNotification.innerText = `😭 won!!! 😭`
+//  } else {
+//    turnNotification.innerText = `It is a tie! 👔`
+//  }
+// };
 
-//RESULTS
-// "😃 won!" or "It is a tie! 👔"
-// show updated scores
+function playGame() {
+  displayTurn();
+  placeToken();
+  displayScore();
+  // displayWinnerText();
+}
+
+//prevent clicking of already occupied grids!!!
 
 
 //setTimeout(function () {
