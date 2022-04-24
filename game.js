@@ -19,15 +19,15 @@ class Game {
     }
     console.log("game has reset", this.gameCompleted);
   }
-  // choosePosition(index) {
-  //   if (this.turn === this.player1 && !this.gridPositions[index]) {
-  //     this.gridPositions[index] = 1;
-  //     return this.gridPositions;
-  //   } else if (this.turn === this.player2 && !this.gridPositions[index]) {
-  //     this.gridPositions[index] = 2;
-  //     return this.gridPositions;
-  //   }
-  // }
+  choosePosition(index) {
+    if (this.turn === this.player1 && !this.gridPositions[index]) {
+      this.gridPositions[index] = 1;
+      return this.gridPositions;
+    } else if (this.turn === this.player2 && !this.gridPositions[index]) {
+      this.gridPositions[index] = 2;
+      return this.gridPositions;
+    }
+  }
   toggleTurn() {
     // this.gridPositions[positionId] = this.turn.token
     if (this.turn === this.player1) {
@@ -68,21 +68,21 @@ class Game {
         this.gameCompleted = true;
       }
   }
-  checkDraw() {
-    !this.gridPositions.includes(null);
-    this.gameCompleted = true;
-    this.winner = null;
-    console.log("checked for draw");
-    console.log(this.winner);
-    return "It's a tie! 👔";
-  }
+  // checkDraw() {
+  //   !this.gridPositions.includes(null);
+  //   this.gameCompleted = true;
+  //   this.winner = null;
+  //   console.log("checked for draw");
+  //   console.log(this.winner);
+  //   return "It's a tie! 👔";
+  // }
   checkGameResult() {
     this.checkPlayer1Win();
     this.checkPlayer2Win();
     console.log("ran the 2 long functions");
-    this.checkDraw();
+    // this.checkDraw();
     console.log("end of better function");
     console.log("80", this.winner);
-    this.resetGame();
+    // this.resetGame();
   }
 }
