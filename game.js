@@ -6,23 +6,28 @@ class Game {
     this.winner = null;
     this.gameCompleted = false;
     this.turn = this.player1;
+    this.lastStartingPlayer = this.player1;
   }
   resetGame() {
     this.gridPositions = [null, null, null, null, null, null, null, null, null];
     this.winner = null;
     this.gameCompleted = false;
-    this.turn = this.player1;
+    if (this.lastStartingPlayer === this.player1) {
+      this.lastStartingPlayer = this.player2;
+    } else {
+      this.lastStartingPlayer = this.player1;
+    }
     console.log("game has reset", this.gameCompleted);
   }
-  choosePosition(index) {
-    if (this.turn === this.player1 && !this.gridPositions[index]) {
-      this.gridPositions[index] = 1;
-      return this.gridPositions;
-    } else if (this.turn === this.player2 && !this.gridPositions[index]) {
-      this.gridPositions[index] = 2;
-      return this.gridPositions;
-    }
-  }
+  // choosePosition(index) {
+  //   if (this.turn === this.player1 && !this.gridPositions[index]) {
+  //     this.gridPositions[index] = 1;
+  //     return this.gridPositions;
+  //   } else if (this.turn === this.player2 && !this.gridPositions[index]) {
+  //     this.gridPositions[index] = 2;
+  //     return this.gridPositions;
+  //   }
+  // }
   toggleTurn() {
     // this.gridPositions[positionId] = this.turn.token
     if (this.turn === this.player1) {

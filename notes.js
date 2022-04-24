@@ -70,7 +70,6 @@
   // currentGame.checkWinner();
 
 
-//use .every()?
 //.every() = if every element passes the conditional [(player.choice.includes()], return true
 
 // checkWinner(player) {
@@ -107,9 +106,4 @@
 // }
 
 
-//check both players' arrays.length === 9 then its a draw
-
-
-
-//when player clicks empty space, add name of player into HTML (innerHTML, eventlistener)
 //or use data-attribute (colorandom thingy)??

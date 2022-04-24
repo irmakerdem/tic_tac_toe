@@ -8,7 +8,8 @@ var player1Score = document.querySelector(".player1-score");
 var player2Score = document.querySelector(".player2-score");
 
 //EVENT LISTENERS
-parentGrid.addEventListener('click', playGame);
+parentGrid.addEventListener('click', playTurn);
+window.addEventListener('load', displayTurn);
 
 //FUNCTIONS
 function placeToken() {
@@ -25,9 +26,9 @@ function placeToken() {
 
 function displayTurn() {
   if (currentGame.turn === currentGame.player1) {
-    turnNotification.innerHTML = `It is ${currentGame.player2.token}'s turn`
-  } else {
     turnNotification.innerHTML = `It is ${currentGame.player1.token}'s turn`
+  } else {
+    turnNotification.innerHTML = `It is ${currentGame.player2.token}'s turn`
   }
 }
 
@@ -46,16 +47,23 @@ function displayScore() {
 //  }
 // };
 
-function playGame() {
+function playTurn() {
   displayTurn();
+  currentGame.checkGameResult();
+
   placeToken();
   displayScore();
   // displayWinnerText();
 }
 
-//prevent clicking of already occupied grids!!!
 
+//display gmae outcome test (win or draw)
+//The player who didn’t begin the previous game now is the first player to go in the new gam
+//track scores and show scores
+//setTimeout(playGame, 3000)
 
-//setTimeout(function () {
+//prevent emoji chnaging on turn notification text when double clicking grid's emoji
 
-// }, 3000);
+//how do i use checkGameResult()
+
+//how do i use choosePosition()
