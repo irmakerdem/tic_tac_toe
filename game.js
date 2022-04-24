@@ -24,12 +24,13 @@ class Game {
     }
   }
   toggleTurn() {
+    // this.gridPositions[positionId] = this.turn.token
     if (this.turn === this.player1) {
       this.turn = this.player2;
-      return "It is player 1's turn";
-    } else {
+      console.log("It is player 1's turn")
+    } else if (this.turn === this.player2) {
       this.turn = this.player1;
-      return "It is player 2's turn";
+      console.log("It is player 2's turn")
     }
   }
   checkPlayer1Win() {
@@ -73,8 +74,10 @@ class Game {
   playGame() {
     this.checkPlayer1Win();
     this.checkPlayer2Win();
+    console.log("ran the 2 long functions");
     this.checkDraw();
     console.log("end of better function");
+    console.log("80", this.winner);
     this.resetGame();
   }
 }

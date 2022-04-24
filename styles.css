@@ -65,3 +65,8 @@ p {
 .grid {
   border: solid 2px #E15FED;
 }
+
+.emoji {
+  height: 200px;
+  width: 200px;
+}

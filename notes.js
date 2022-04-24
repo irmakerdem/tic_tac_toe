@@ -8,11 +8,24 @@
 
 
 // this.totalPlays = 0;
-// var board = [1, 1, 1,
-//             2, null, null,
-//             2, 2, null]
+// var board = [0, 1, 2,
+//             3, 4, 5,
+//             6, 7, 8]
 
+// var board = [null, 1, null,
+//             1, null, 2,
+//             null, null, null,]
 
+// this.winningPositions = [
+//   ["0", "1", "2"],
+//   ["3", "4", "5"],
+//   ["6", "7", "8"],
+//   ["0", "3", "6"],
+//   ["1", "4", "7"],
+//   ["2", "5", "8"],
+//   ["0", "4", "8"],
+//   ["2", "4", "6"]
+// ];
 
 //   checkWinner() {
 //     if ((this.gridPositions[0] === 1 && this.gridPositions[1] === 1 && this.gridPositions[2] === 1) ||
@@ -202,6 +215,17 @@
 //     }
 //   }
 // }
+
+// this.winningPositions = [
+//   ["0", "1", "2"],
+//   ["3", "4", "5"],
+//   ["6", "7", "8"],
+//   ["0", "3", "6"],
+//   ["1", "4", "7"],
+//   ["2", "5", "8"],
+//   ["0", "4", "8"],
+//   ["2", "4", "6"]
+// ];
 
 // checkWinner() {
 //   var passedCheck = 0;
