@@ -6,6 +6,7 @@ var parentGrid = document.querySelector(".game-grid");
 var turnNotification = document.querySelector(".turn-notification");
 var player1Score = document.querySelector(".player1-score");
 var player2Score = document.querySelector(".player2-score");
+var allSquares = document.querySelectorAll(".grid");
 
 //EVENT LISTENERS
 parentGrid.addEventListener('click', playTurn);
@@ -40,6 +41,14 @@ function displayWinnerText() {
  }
 }
 
+function show(element) {
+  element.classList.remove('hidden')
+}
+
+function hide(element) {
+  element.classList.add('hidden')
+}
+
 //go through positions array
 //make sure there are 0 nulls
 //if null: no tie, dont do anything
@@ -61,8 +70,18 @@ function displayWinnerText() {
 function playTurn(event) {
   var playerId = event.target.id;
   currentGame.choosePosition(playerId);
-  placeToken();
+  if(currentGame.gridPositions.includes(null) && !currentGame.gameCompleted) {
+    placeToken();
+  }
   currentGame.checkGameResult();
+  if(currentGame.gameCompleted) {
+    hide(parentGrid);
+    clearGrid();
+    setTimeout(function() {
+      currentGame.resetGame();
+      show(parentGrid);
+    }, 3000);
+  }
   // checkForDraw();
   displayScore();
   // displayTurn();
@@ -72,17 +91,21 @@ function playTurn(event) {
   // }
 }
 
+
+function clearGrid() {
+  for (var i = 0; i < allSquares.length; i++) {
+    allSquares[i].innerHTML = "";
+  }
+}
+
 //stop game when player has won
 //display winner
 
+//update tie function
 //stop game when there's a tie
 //display tie
 
 //restart new game
-//The player who didn’t begin the previous game now is the first player to go in the new gam
+//player who didn’t begin previous game now is 1st player to go in new game
 
-
-//track scores and show scores
-//setTimeout(playGame, 3000)
-
-//prevent emoji chnaging on turn notification text when double clicking grid's emoji
+//maintain scores after game reset and show scores

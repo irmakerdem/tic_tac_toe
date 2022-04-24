@@ -17,7 +17,7 @@ class Game {
     } else {
       this.lastStartingPlayer = this.player1;
     }
-    console.log("game has reset", this.gameCompleted);
+    // console.log("game has reset", this.gameCompleted);
   }
   choosePosition(index) {
     if (this.turn === this.player1 && !this.gridPositions[index]) {
@@ -32,10 +32,10 @@ class Game {
     // this.gridPositions[positionId] = this.turn.token
     if (this.turn === this.player1) {
       this.turn = this.player2;
-      console.log("It is player 1's turn")
+      // console.log("It is player 1's turn")
     } else if (this.turn === this.player2) {
       this.turn = this.player1;
-      console.log("It is player 2's turn")
+      // console.log("It is player 2's turn")
     }
   }
   checkPlayer1Win() {
@@ -79,10 +79,10 @@ class Game {
   checkGameResult() {
     this.checkPlayer1Win();
     this.checkPlayer2Win();
-    console.log("ran the 2 long functions");
+    // console.log("ran the 2 long functions");
     // this.checkDraw();
-    console.log("end of better function");
-    console.log("80", this.winner);
+    // console.log("end of better function");
+    // console.log("80", this.winner);
     // this.resetGame();
   }
 }
