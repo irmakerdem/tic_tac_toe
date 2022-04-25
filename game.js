@@ -8,6 +8,7 @@ class Game {
     this.turn = this.player1;
     this.lastStartingPlayer = this.player1;
   }
+
   choosePosition(index) {
     if (this.turn === this.player1 && !this.gridPositions[index]) {
       this.gridPositions[index] = 1;
@@ -17,6 +18,7 @@ class Game {
       return this.gridPositions;
     }
   }
+
   toggleTurn() {
     if (this.turn === this.player1) {
       this.turn = this.player2;
@@ -24,6 +26,7 @@ class Game {
       this.turn = this.player1;
     }
   }
+
   checkPlayer1Win() {
     if ((this.gridPositions[0] === 1 && this.gridPositions[1] === 1 && this.gridPositions[2] === 1) ||
       (this.gridPositions[3] === 1 && this.gridPositions[4] === 1 && this.gridPositions[5] === 1) ||
@@ -39,6 +42,7 @@ class Game {
         this.gameCompleted = true;
       }
   }
+
   checkPlayer2Win() {
     if ((this.gridPositions[0] === 2 && this.gridPositions[1] === 2 && this.gridPositions[2] === 2) ||
       (this.gridPositions[3] === 2 && this.gridPositions[4] === 2 && this.gridPositions[5] === 2) ||
@@ -54,6 +58,7 @@ class Game {
         this.gameCompleted = true;
       }
   }
+
   resetGame() {
     this.gridPositions = [null, null, null, null, null, null, null, null, null];
     this.winner = null;
@@ -64,6 +69,7 @@ class Game {
       this.lastStartingPlayer = this.player1;
     }
   }
+
   checkGameResult() {
     this.checkPlayer1Win();
     this.checkPlayer2Win();

@@ -11,7 +11,7 @@ var allSquares = document.querySelectorAll(".grid");
 //EVENT LISTENERS
 parentGrid.addEventListener('click', playTurn);
 window.addEventListener('load', function() {
-  displayScore
+  displayScore;
 });
 
 //FUNCTIONS
@@ -55,7 +55,7 @@ function hide(element) {
   element.classList.add('hidden')
 }
 
-function checkDrawwwww() {
+function checkDraw() {
   if (!currentGame.gridPositions.includes(null)) {
     currentGame.gameCompleted = true;
     turnNotification.innerText = `It is a tie! 👔`;
@@ -88,7 +88,7 @@ function playTurn(event) {
     console.log(currentGame.gridPositions);
     placeToken();
     updateTurnNotification();
-    checkDrawwwww();
+    checkDraw();
     currentGame.checkGameResult();
     displayEndOfGameText();
   }
