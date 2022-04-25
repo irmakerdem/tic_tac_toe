@@ -10,9 +10,6 @@ var allSquares = document.querySelectorAll(".grid");
 
 //EVENT LISTENERS
 parentGrid.addEventListener('click', playTurn);
-window.addEventListener('load', function() {
-  displayScore;
-});
 
 //FUNCTIONS
 function placeToken() {
@@ -26,9 +23,9 @@ function placeToken() {
 
 function updateTurnNotification() {
   if (currentGame.turn === currentGame.player1) {
-    turnNotification.innerHTML = `It is ${currentGame.player1.token}'s turn!`;
+    turnNotification.innerText = `It is ${currentGame.player1.token}'s turn!`;
   } else {
-    turnNotification.innerHTML = `It is ${currentGame.player2.token}'s turn!`;
+    turnNotification.innerText = `It is ${currentGame.player2.token}'s turn!`;
   }
 }
 
@@ -83,7 +80,9 @@ function checkIfGameOver() {
 
 function playTurn(event) {
   var playerId = event.target.id;
-  if (currentGame.gridPositions.includes(null) && !currentGame.gameCompleted) {
+  if (currentGame.gridPositions.includes(null) &&
+  !currentGame.gameCompleted &&
+  !event.target.innerText) {
     currentGame.choosePosition(playerId);
     placeToken();
     updateTurnNotification();
