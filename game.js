@@ -8,17 +8,6 @@ class Game {
     this.turn = this.player1;
     this.lastStartingPlayer = this.player1;
   }
-  resetGame() {
-    this.gridPositions = [null, null, null, null, null, null, null, null, null];
-    this.winner = null;
-    this.gameCompleted = false;
-    if (this.lastStartingPlayer === this.player1) {
-      this.lastStartingPlayer = this.player2;
-    } else {
-      this.lastStartingPlayer = this.player1;
-    }
-    // console.log("game has reset", this.gameCompleted);
-  }
   choosePosition(index) {
     if (this.turn === this.player1 && !this.gridPositions[index]) {
       this.gridPositions[index] = 1;
@@ -29,13 +18,10 @@ class Game {
     }
   }
   toggleTurn() {
-    // this.gridPositions[positionId] = this.turn.token
     if (this.turn === this.player1) {
       this.turn = this.player2;
-      // console.log("It is player 1's turn")
     } else if (this.turn === this.player2) {
       this.turn = this.player1;
-      // console.log("It is player 2's turn")
     }
   }
   checkPlayer1Win() {
@@ -48,7 +34,7 @@ class Game {
       (this.gridPositions[0] === 1 && this.gridPositions[4] === 1 && this.gridPositions[8] === 1) ||
       (this.gridPositions[2] === 1 && this.gridPositions[4] === 1 && this.gridPositions[6] === 1)) {
         this.winner = this.player1;
-        console.log("player 1 conditional", this.winner);
+        console.log(this.winner);
         this.player1.increaseWins();
         this.gameCompleted = true;
       }
@@ -63,26 +49,23 @@ class Game {
       (this.gridPositions[0] === 2 && this.gridPositions[4] === 2 && this.gridPositions[8] === 2) ||
       (this.gridPositions[2] === 2 && this.gridPositions[4] === 2 && this.gridPositions[6] === 2)) {
         this.winner = this.player2;
-        console.log("player 2 conditional", this.winner);
+        console.log(this.winner);
         this.player2.increaseWins();
         this.gameCompleted = true;
       }
   }
-  // checkDraw() {
-  //   !this.gridPositions.includes(null);
-  //   this.gameCompleted = true;
-  //   this.winner = null;
-  //   console.log("checked for draw");
-  //   console.log(this.winner);
-  //   return "It's a tie! 👔";
-  // }
+  resetGame() {
+    this.gridPositions = [null, null, null, null, null, null, null, null, null];
+    this.winner = null;
+    this.gameCompleted = false;
+    if (this.lastStartingPlayer === this.player1) {
+      this.lastStartingPlayer = this.player2;
+    } else {
+      this.lastStartingPlayer = this.player1;
+    }
+  }
   checkGameResult() {
     this.checkPlayer1Win();
     this.checkPlayer2Win();
-    // console.log("ran the 2 long functions");
-    // this.checkDraw();
-    // console.log("end of better function");
-    // console.log("80", this.winner);
-    // this.resetGame();
   }
 }

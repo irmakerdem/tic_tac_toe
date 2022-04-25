@@ -17,15 +17,19 @@ window.addEventListener('load', function() {
 //FUNCTIONS
 function placeToken() {
   if (!event.target.innerText && currentGame.turn === currentGame.player1) {
-    turnNotification.innerHTML = `It is ${currentGame.player2.token}'s turn!`;
     event.target.innerText = currentGame.player1.token;
-    // console.log(currentGame.gridPositions);
   } else if (!event.target.innerText && currentGame.turn === currentGame.player2) {
-    turnNotification.innerHTML = `It is ${currentGame.player1.token}'s turn!`;
     event.target.innerText = currentGame.player2.token;
-    // console.log(currentGame.gridPositions);
   }
   currentGame.toggleTurn();
+}
+
+function updateTurnNotification() {
+  if (currentGame.turn === currentGame.player1) {
+    turnNotification.innerHTML = `It is ${currentGame.player1.token}'s turn!`;
+  } else {
+    turnNotification.innerHTML = `It is ${currentGame.player2.token}'s turn!`;
+  }
 }
 
 function displayScore() {
@@ -33,11 +37,13 @@ function displayScore() {
   player2Score.innerText = `SCORE: ${currentGame.player2.score}`;
 }
 
-function displayWinnerText() {
+function displayEndOfGameText() {
  if (currentGame.winner === currentGame.player1) {
    turnNotification.innerText = `😃 won!!! 😃`;
  } else if (currentGame.winner === currentGame.player2) {
    turnNotification.innerText = `😭 won!!! 😭`;
+ } else if (!currentGame.winner && currentGame.gameCompleted) {
+   turnNotification.innerText = `It is a tie! 👔`;
  }
 }
 
@@ -49,63 +55,49 @@ function hide(element) {
   element.classList.add('hidden')
 }
 
-//go through positions array
-//make sure there are 0 nulls
-//if null: no tie, dont do anything
-//if no null: that means array is full of player choices therefore it's a tie (stop game)
-//
-// function checkForDraw() {
-//   console.log("checkForDraw started");
-//   for (var i = 0; i < currentGame.gridPositions.length; i++) {
-//     console.log("59", currentGame.gridPositions);
-//     if (currentGame.gridPositions[i] !== null) {
-//       turnNotification.innerText = `It is a tie! 👔`;
-//     } else {
-//       console.log("checkForDraw ended");
-//       return
-//     }
-//   }
-// }
-
-function playTurn(event) {
-  var playerId = event.target.id;
-  currentGame.choosePosition(playerId);
-  if(currentGame.gridPositions.includes(null) && !currentGame.gameCompleted) {
-    placeToken();
-  }
-  currentGame.checkGameResult();
-  if(currentGame.gameCompleted) {
-    hide(parentGrid);
+function checkDrawwwww() {
+  if (!currentGame.gridPositions.includes(null)) {
+    currentGame.gameCompleted = true;
+    turnNotification.innerText = `It is a tie! 👔`;
+    updateTurnNotification();
     clearGrid();
     setTimeout(function() {
       currentGame.resetGame();
       show(parentGrid);
     }, 3000);
   }
-  // checkForDraw();
-  displayScore();
-  // displayTurn();
-  // displayWinnerText();
-  // if (currentGame.gridPositions) {
-  //   checkForDraw
-  // }
 }
 
-
-function clearGrid() {
-  for (var i = 0; i < allSquares.length; i++) {
-    allSquares[i].innerHTML = "";
+function checkIfGameOver() {
+  if(currentGame.gameCompleted) {
+    displayEndOfGameText();
+    hide(parentGrid);
+    clearGrid();
+    displayScore();
+    setTimeout(function() {
+      currentGame.resetGame();
+      updateTurnNotification();
+      show(parentGrid);
+    }, 3000);
   }
 }
 
-//stop game when player has won
-//display winner
+function playTurn(event) {
+  var playerId = event.target.id;
+  if (currentGame.gridPositions.includes(null) && !currentGame.gameCompleted) {
+    currentGame.choosePosition(playerId);
+    console.log(currentGame.gridPositions);
+    placeToken();
+    updateTurnNotification();
+    checkDrawwwww();
+    currentGame.checkGameResult();
+    displayEndOfGameText();
+  }
+  checkIfGameOver();
+}
 
-//update tie function
-//stop game when there's a tie
-//display tie
-
-//restart new game
-//player who didn’t begin previous game now is 1st player to go in new game
-
-//maintain scores after game reset and show scores
+function clearGrid() {
+  for (var i = 0; i < allSquares.length; i++) {
+    allSquares[i].innerText = "";
+  }
+}
