@@ -60,9 +60,9 @@ function checkDrawwwww() {
     currentGame.gameCompleted = true;
     turnNotification.innerText = `It is a tie! 👔`;
     updateTurnNotification();
-    clearGrid();
     setTimeout(function() {
       currentGame.resetGame();
+      clearGrid();
       show(parentGrid);
     }, 3000);
   }
@@ -71,12 +71,11 @@ function checkDrawwwww() {
 function checkIfGameOver() {
   if(currentGame.gameCompleted) {
     displayEndOfGameText();
-    hide(parentGrid);
-    clearGrid();
     displayScore();
     setTimeout(function() {
       currentGame.resetGame();
       updateTurnNotification();
+      clearGrid();
       show(parentGrid);
     }, 3000);
   }
