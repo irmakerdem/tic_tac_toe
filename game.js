@@ -62,8 +62,10 @@ class Game {
     this.winner = null;
     this.gameCompleted = false;
     if (this.lastStartingPlayer === this.player1) {
+      this.turn = this.player2;
       this.lastStartingPlayer = this.player2;
     } else {
+      this.turn = this.player1;
       this.lastStartingPlayer = this.player1;
     }
   }
