@@ -1,6 +1,5 @@
 * {
   font-family: 'Bungee Outline', cursive;
-  /* border: red solid 2px; */
 }
 
 html, body {
@@ -14,6 +13,12 @@ h2 {
   margin: 0;
 }
 
+h4 {
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
 p {
   margin: 0;
 }
@@ -24,6 +29,7 @@ p {
   height: 100%;
   width: 100%;
   background-color: #B4FF9F;
+  text-align: center;
 }
 
 .left-section {
@@ -45,6 +51,8 @@ p {
 
 .middle-section {
   background-color: #B4FF9F;
+  display: flex;
+  flex-direction: column;
 }
 
 .game-grid {
@@ -56,6 +64,7 @@ p {
   height: 60%;
   width: 80%;
   margin: 15% auto auto;
+  padding-bottom: 70px;
 }
 
 .player1-side, .player2-side {
@@ -64,4 +73,10 @@ p {
 
 .grid {
   border: solid 2px #E15FED;
+  font-size: 80px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
 }

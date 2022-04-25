@@ -4,6 +4,7 @@ class Player {
     this.token = token;
     this.score = 0;
   }
+  
   increaseWins() {
     this.score += 1;
   }
