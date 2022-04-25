@@ -37,7 +37,6 @@ class Game {
       (this.gridPositions[0] === 1 && this.gridPositions[4] === 1 && this.gridPositions[8] === 1) ||
       (this.gridPositions[2] === 1 && this.gridPositions[4] === 1 && this.gridPositions[6] === 1)) {
         this.winner = this.player1;
-        console.log(this.winner);
         this.player1.increaseWins();
         this.gameCompleted = true;
       }
@@ -53,7 +52,6 @@ class Game {
       (this.gridPositions[0] === 2 && this.gridPositions[4] === 2 && this.gridPositions[8] === 2) ||
       (this.gridPositions[2] === 2 && this.gridPositions[4] === 2 && this.gridPositions[6] === 2)) {
         this.winner = this.player2;
-        console.log(this.winner);
         this.player2.increaseWins();
         this.gameCompleted = true;
       }

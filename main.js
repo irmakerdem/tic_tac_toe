@@ -85,7 +85,6 @@ function playTurn(event) {
   var playerId = event.target.id;
   if (currentGame.gridPositions.includes(null) && !currentGame.gameCompleted) {
     currentGame.choosePosition(playerId);
-    console.log(currentGame.gridPositions);
     placeToken();
     updateTurnNotification();
     checkDraw();
