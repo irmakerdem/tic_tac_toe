@@ -35,11 +35,11 @@ function displayScore() {
 
 function displayEndOfGameText() {
  if (currentGame.winner === currentGame.player1) {
-   turnNotification.innerText = `😃 won!!! 😃`;
+   turnNotification.innerText = `🥳 won!!! 🥳`;
  } else if (currentGame.winner === currentGame.player2) {
-   turnNotification.innerText = `😭 won!!! 😭`;
+   turnNotification.innerText = `🤡 won!!! 🤡`;
  } else if (!currentGame.winner && currentGame.gameCompleted) {
-   turnNotification.innerText = `It is a tie! 👔`;
+   turnNotification.innerText = `👔 it is a tie! 👔`;
  }
 }
 
