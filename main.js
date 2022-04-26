@@ -54,7 +54,7 @@ function hide(element) {
 function checkDraw() {
   if (!currentGame.gridPositions.includes(null)) {
     currentGame.gameCompleted = true;
-    turnNotification.innerText = `It is a tie! 👔`;
+    turnNotification.innerText = `👔 it is a tie! 👔`;
     updateTurnNotification();
     setTimeout(function() {
       currentGame.resetGame();
