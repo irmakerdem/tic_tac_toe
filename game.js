@@ -7,6 +7,16 @@ class Game {
     this.gameCompleted = false;
     this.turn = this.player1;
     this.lastStartingPlayer = this.player1;
+    this.winningPositions = [
+      [3, 4, 5],
+      [0, 3, 6],
+      [0, 1, 2],
+      [1, 4, 7],
+      [2, 5, 8],
+      [6, 7, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ];
   }
 
   choosePosition(index) {
@@ -27,34 +37,18 @@ class Game {
     }
   }
 
-  checkPlayer1Win() {
-    if ((this.gridPositions[0] === 1 && this.gridPositions[1] === 1 && this.gridPositions[2] === 1) ||
-      (this.gridPositions[3] === 1 && this.gridPositions[4] === 1 && this.gridPositions[5] === 1) ||
-      (this.gridPositions[6] === 1 && this.gridPositions[7] === 1 && this.gridPositions[8] === 1) ||
-      (this.gridPositions[0] === 1 && this.gridPositions[3] === 1 && this.gridPositions[6] === 1) ||
-      (this.gridPositions[1] === 1 && this.gridPositions[4] === 1 && this.gridPositions[7] === 1) ||
-      (this.gridPositions[2] === 1 && this.gridPositions[5] === 1 && this.gridPositions[8] === 1) ||
-      (this.gridPositions[0] === 1 && this.gridPositions[4] === 1 && this.gridPositions[8] === 1) ||
-      (this.gridPositions[2] === 1 && this.gridPositions[4] === 1 && this.gridPositions[6] === 1)) {
-        this.winner = this.player1;
-        this.player1.increaseWins();
+  checkPlayerWin(player) {
+    console.log("player", player);
+    for (var i = 0; i < this.winningPositions.length; i++) {
+      var grid0 = this.winningPositions[i][0];
+      var grid1 = this.winningPositions[i][1];
+      var grid2 = this.winningPositions[i][2];
+      if (this.gridPositions[grid0] === player.id && this.gridPositions[grid1] === player.id && this.gridPositions[grid2] === player.id) {
+        this.winner = player;
+        player.increaseWins();
         this.gameCompleted = true;
       }
-  }
-
-  checkPlayer2Win() {
-    if ((this.gridPositions[0] === 2 && this.gridPositions[1] === 2 && this.gridPositions[2] === 2) ||
-      (this.gridPositions[3] === 2 && this.gridPositions[4] === 2 && this.gridPositions[5] === 2) ||
-      (this.gridPositions[6] === 2 && this.gridPositions[7] === 2 && this.gridPositions[8] === 2) ||
-      (this.gridPositions[0] === 2 && this.gridPositions[3] === 2 && this.gridPositions[6] === 2) ||
-      (this.gridPositions[1] === 2 && this.gridPositions[4] === 2 && this.gridPositions[7] === 2) ||
-      (this.gridPositions[2] === 2 && this.gridPositions[5] === 2 && this.gridPositions[8] === 2) ||
-      (this.gridPositions[0] === 2 && this.gridPositions[4] === 2 && this.gridPositions[8] === 2) ||
-      (this.gridPositions[2] === 2 && this.gridPositions[4] === 2 && this.gridPositions[6] === 2)) {
-        this.winner = this.player2;
-        this.player2.increaseWins();
-        this.gameCompleted = true;
-      }
+    }
   }
 
   resetGame() {
@@ -68,10 +62,5 @@ class Game {
       this.turn = this.player1;
       this.lastStartingPlayer = this.player1;
     }
-  }
-
-  checkGameResult() {
-    this.checkPlayer1Win();
-    this.checkPlayer2Win();
   }
 }
