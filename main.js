@@ -18,7 +18,6 @@ function placeToken() {
   } else if (!event.target.innerText && currentGame.turn === currentGame.player2) {
     event.target.innerText = currentGame.player2.token;
   }
-  currentGame.toggleTurn();
 }
 
 function updateTurnNotification() {
@@ -36,20 +35,20 @@ function displayScore() {
 
 function displayEndOfGameText() {
  if (currentGame.winner === currentGame.player1) {
-   turnNotification.innerText = `😃 won!!! 😃`;
+   turnNotification.innerText = `🥳 won!!! 🥳`;
  } else if (currentGame.winner === currentGame.player2) {
-   turnNotification.innerText = `😭 won!!! 😭`;
+   turnNotification.innerText = `🤡 won!!! 🤡`;
  } else if (!currentGame.winner && currentGame.gameCompleted) {
-   turnNotification.innerText = `It is a tie! 👔`;
+   turnNotification.innerText = `👔 it is a tie! 👔`;
  }
 }
 
 function show(element) {
-  element.classList.remove('hidden')
+  element.classList.remove('hidden');
 }
 
 function hide(element) {
-  element.classList.add('hidden')
+  element.classList.add('hidden');
 }
 
 function checkDraw() {
@@ -80,14 +79,16 @@ function checkIfGameOver() {
 
 function playTurn(event) {
   var playerId = event.target.id;
+  var player = currentGame.turn;
   if (currentGame.gridPositions.includes(null) &&
   !currentGame.gameCompleted &&
   !event.target.innerText) {
     currentGame.choosePosition(playerId);
     placeToken();
+    currentGame.toggleTurn();
     updateTurnNotification();
     checkDraw();
-    currentGame.checkGameResult();
+    currentGame.checkPlayerWin(player);
     displayEndOfGameText();
   }
   checkIfGameOver();
