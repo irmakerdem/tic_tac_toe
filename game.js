@@ -38,7 +38,6 @@ class Game {
   }
 
   checkPlayerWin(player) {
-    console.log("player", player);
     for (var i = 0; i < this.winningPositions.length; i++) {
       var grid0 = this.winningPositions[i][0];
       var grid1 = this.winningPositions[i][1];
