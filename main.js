@@ -43,22 +43,12 @@ function displayEndOfGameText() {
  }
 }
 
-function show(element) {
-  element.classList.remove('hidden');
-}
-
-function hide(element) {
-  element.classList.add('hidden');
-}
-
 function checkDraw() {
   if (!currentGame.gridPositions.includes(null)) {
     currentGame.gameCompleted = true;
-    updateTurnNotification();
     setTimeout(function() {
       currentGame.resetGame();
       clearGrid();
-      show(parentGrid);
     }, 3000);
   }
 }
@@ -71,7 +61,6 @@ function checkIfGameOver() {
       currentGame.resetGame();
       updateTurnNotification();
       clearGrid();
-      show(parentGrid);
     }, 3000);
   }
 }
@@ -97,4 +86,7 @@ function clearGrid() {
   for (var i = 0; i < allSquares.length; i++) {
     allSquares[i].innerText = "";
   }
+  // allSquares.forEach(square => {
+  //   square.innerText = "";
+  // });
 }

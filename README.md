@@ -15,8 +15,6 @@
 ### Introduction
 Have you always wanted to play tic tac toe with your friend ON THE SAME COMPUTER?? 💻 Well look no further because this tic tac toe game was made to be played at parties (a party of 2 is still considered a party, yes 😜).
 
-**!!!Deploy link will be updated once repo is made public!!!**
-
 ### Technologies
 - JavaScript
 - HTML
@@ -28,7 +26,7 @@ Have you always wanted to play tic tac toe with your friend ON THE SAME COMPUTER
 3. Run `open index.html`.
 
 ### Deployment Link
-- Simply play at:
+- Simply play [here](https://irmakerdem.github.io/tic_tac_toe/).
 
 ### Features
 - Player can only place a token in an empty space
